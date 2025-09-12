@@ -1,0 +1,10 @@
+#!/bin/sh
+'''exec' "/Users/georgeburton/Documents/Noble Desktop/Retakes/Retake-React-Bootcamp/Unit-3/3lab-minishop-react-app-with-context/backend/minishop_backend_project_directory/venv/bin/python" "$0" "$@"
+' '''
+# -*- coding: utf-8 -*-
+import re
+import sys
+from rsa.cli import verify
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(verify())

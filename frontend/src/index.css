@@ -1,0 +1,481 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: black;
+  background-color: white;
+
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/* AuthModal.jsx section: */
+/* Modal Overlay */
+.user-login-modal-form-overlay {
+    position: fixed; /* Stays in place even when scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    display: flex; /* Use flexbox for centering content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 1000; /* Ensure it's on top of other content */
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Initially hidden */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for appearance */
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px; /* Limit maximum width */
+    transform: scale(0.9); /* Slightly scaled down when hidden */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+/* Show Modal when active (e.g., via JavaScript adding a class) */
+.user-login-modal-form-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.user-login-modal-form-overlay .modal-content {
+    transform: scale(1); /* Scale to normal size when active */
+}
+
+/* Styles for the login form elements within the modal */
+.username-login-field-title .password-login-field-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.login-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.username-login-field input[type="text"],
+.password-login-field input[type="password"] {
+    width: calc(100% - 20px); /* Account for padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.authmodal-login-button button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+.authmodal-login-button button:hover {
+    background-color: #0056b3;
+}
+
+/* Close button for the modal */
+.user-login-form-close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.user-login-form-close-button:hover {
+    color: #555;
+}
+
+/* Home component section: */
+
+.home {
+  display: flex;
+  flex-direction: column;
+  /* border: 2px coral dashed; */
+}
+
+/* Navbar.jsx section: */
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* border: 2px blue dashed; */
+}
+
+.minishop-logo {
+  text-decoration: none;
+  color: #05ABF3;
+}
+
+.minishop-logo:visited {
+  color: #05ABF3;
+  text-decoration: none;
+}
+
+
+.search-input {
+  border-radius: 10px;
+  /* In Figma, the search input bar is 608.4px vs a 1440px vw. Therefore, 608.4px/1440px*100 = 42.25% */
+  width: 42.25vw;
+}
+
+.authenticated-user-container {
+  display: flex;
+  /* In Figma, the login container is 99px wide vs a 1440px vw. Therefore, 99px/1440px*100 = 6.87% */
+  width: auto;
+  justify-content: space-between;
+  /* border: 2px blue dashed; */
+}
+
+/* .user-avatar-icon {
+  border: 2px blue dashed;
+} */
+
+
+.login-button, .product-card-add-to-cart-button, .cart-proceed-to-checkout-button {
+  width: fit-content;
+  background-color: #05ABF3;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  margin: 5px 5px;
+  /* border: 2px blue dashed; */
+}
+
+.login-button:hover,
+.product-card-add-to-cart-button:hover,
+.cart-proceed-to-checkout-button:hover {
+  background-color: #007bff;
+}
+
+.logout-button, .clear-cart-button {
+  width: fit-content;
+  background-color: grey;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  margin: 5px 5px;
+  /* border: 2px blue dashed; */
+}
+
+.product-card-add-to-cart-button {
+  width: 50%;
+  height: 10%;
+}
+
+.cart-nav-icon {
+  position: relative;
+  /* border: 2px blue dashed; */
+}
+
+.cart-item-counter {
+  position: absolute;
+  top: 30px;
+  left: 28px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.product-filter {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 20px;
+  /* border: 2px beige dashed; */
+}
+
+.sell-product-form {
+  border: 2px green dashed;
+}
+
+.banner-ad-div {
+  /* 1201px width in Figma. 1201/1440*100 = 83.4%  */
+  /* width: 83.4vw; */
+  /* 316px height in Figma. 316/1024*100 = 30.85% */
+  /* height: 30.85%; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 30.85vh;
+  /* border: 2px brown dashed; */
+  align-self: center;
+  background-color: #212844;
+  border-radius: 10px;
+}
+
+.banner-h1 {
+  display: flex;
+  color: white;
+}
+
+.product-cards-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 10px;
+  /* border: 2px blue dashed; */
+}
+
+.product-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* 227px width in Figma. 227/1440*100 = 15.76% */
+  width: 15.76vw;
+  /* 295px high in Figma. 295/1440*100 = 20.48% */
+  height: auto;
+  border-radius: 10px;
+  text-align: center;
+  margin: 5px;
+  border: 2px gray solid;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+
+}
+
+.product-card-image {
+  /* 188px high in Figma. This element's parent, product-card-container, has a height of 295px. 188/295*100 = 63.72%  */
+  height: 63.72%;
+  width: 100%;
+  /* border: 2px olivedrab dashed; */
+
+}
+
+.product-card-name {
+  margin: 10px 0px 5px 0px;
+  /* border: 2px royalblue dashed; */
+}
+
+.product-card-price {
+  margin: 0px 0px 5px 0px;
+  /* border: 2px burlywood dashed; */
+}
+
+/* SELLPRODUCTBUTTON.jsx section: */
+.sell-product-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #ddff00c9;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+/* SELLPRODUCTFORM.jsx section: */
+/* Modal Overlay */
+.sell-product-modal-form-overlay {
+    position: fixed; /* Stays in place even when scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+    display: flex; /* Use flexbox for centering content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    z-index: 1000; /* Ensure it's on top of other content */
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Initially hidden */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition for appearance */
+}
+
+/* Modal Content Box */
+.sell-product-modal-form-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px; /* Limit maximum width */
+    transform: scale(0.9); /* Slightly scaled down when hidden */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+/* Show Modal when active (e.g., via JavaScript adding a class) */
+.sell-product-modal-form-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.sell-product-modal-form-overlay .sell-product-modal-form-content {
+    transform: scale(1); /* Scale to normal size when active */
+}
+
+/* Styles for the login form elements within the modal */
+.sell-product-name-field-title .sell-product-category-field-title .sell-product-price-field-title .sell-product-image-field-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.sell-product-name-input-field,
+.sell-product-category-dropdown,
+.sell-product-price-input-field,
+.sell-product-image-input-field {
+    width: calc(100% - 20px); /* Account for padding */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.submit-product-for-sale-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+.submit-product-for-sale-button button:hover {
+    background-color: #0056b3;
+}
+
+/* Close button for the modal */
+.user-login-form-close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.user-login-form-close-button:hover {
+    color: #555;
+} /* END OF SELLPRODUCTFORM COMPONENT */
+/* END OF HOME COMPONENT */
+
+/* CART COMPONENT: */
+/* Cart component section: */
+/* .cart {
+  border: 2px red dashed;
+} */
+
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 4px #05ABF3 solid;
+}
+
+.cart-title-and-clear-cart-button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-title {
+  text-decoration: none;
+}
+
+.cart-product-and-summary-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  /* border: 2px cyan dashed; */
+}
+
+.cart-product-list {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 10px;
+  /* border: 2px orange dashed; */
+}
+
+/* In CartItem.jsx: */
+.cart-product-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 45vw;
+  margin: 5px 5px;
+  border: 2px #05ABF3 solid;
+}
+
+.cart-product-card-image {
+  width: 60%;
+  /* 145px height in Figma. (145/1024)*100=14.16% */
+  height: 100%;
+  /* border: 2px blue dashed; */
+}
+
+.cart-product-card-details-parent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* border: 3px purple solid; */
+}
+.cart-product-card-details-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* border: 2px #05ABF3 solid; */
+}
+
+/* .cart-product-card-name {
+  border: 2px red dashed;
+} */
+
+/* .cart-product-card-price {
+  border: 2px brown dashed;
+} */
+
+.cart-product-card-quantity-and-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 5px 5px;
+  padding: 5px 5px;
+  width: 80%;
+  border: 2px #05ABF3 solid;
+}
+
+.cart-order-summary-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 45vw;
+  border: 2px #05ABF3 solid;
+  margin: 10px 10px;
+  padding: 10px;
+}
