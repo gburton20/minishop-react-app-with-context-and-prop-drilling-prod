@@ -11,7 +11,7 @@ createRoot(document.getElementById('root')).render(
   // <StrictMode>
     <Auth0Provider
       domain='dev-ngpva7twomewnfum.us.auth0.com'
-      clientId='kIBq2RIzZx2wagZfhmGOGT7NCUvQCzJX'
+      clientId='5sMCpbS0qTIJNtAXbxZUqOnGJScezSZR'
       authorizationParams={{
         redirect_uri: window.location.origin,
         audience: "https://dev-ngpva7twomewnfum.us.auth0.com/api/v2/",
