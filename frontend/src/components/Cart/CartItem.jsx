@@ -1,11 +1,12 @@
-import React from 'react'
+import {useContext} from 'react'
+import CartContext from '../../context/cartContext';
 
 const CartItem = ({ 
   // CartItem receives two props; i) cartItems (an array of product objects passed down from App.jsx) and ii) cartItemCounts (a type number tracking the quantities of individual items added to the cart.)
-  cartItems, // cartState
-  cartItemCounts, // counts
-  handleAddToCart, // handleAddToCart()
-  handleRemoveFromCart // handleRemoveFromCart()
+  cartItems = useContext(CartContext), // cartState
+  cartItemCounts = useContext(CartContext), // counts
+  handleAddToCart = useContext(CartContext), // handleAddToCart()
+  handleRemoveFromCart = useContext(CartContext) // handleRemoveFromCart()
 }) => {
   // A guard clause that returns null if there are no cart items or if the array is empty, preventing unneccessary rendering (best practice as negates rendering waste)
   if (!cartItems || cartItems.length === 0) {

@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useContext } from 'react'
+import CartContext from '../../../context/cartContext'
 
 // Import the following props from ProductCardList.jsx, the first component in which they are created (via the API call) :
 const ProductCard = ({
@@ -9,7 +10,7 @@ const ProductCard = ({
     // handleAddToCart is a function defined in App.jsx and passed down as a prop through Home.jsx and ProductCardsList.jsx to ProductCard.jsx.
     // By invoking this function from ProductCard.jsx (e.g., in a <button> onClick handler), we trigger state updates in App.jsx (such as cartState, navCartAddCount, and itemInCartCount).
     // This pattern is called "lifting state up" and allows child components to communicate changes to their parent.
-    handleAddToCart,
+    handleAddToCart = useContext(CartContext)
 }) => {
     return (
         // React fragments act as the root level element in this return statement, allowing multiple child elements to be returned within their boundaries

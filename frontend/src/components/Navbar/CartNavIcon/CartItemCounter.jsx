@@ -1,14 +1,14 @@
-import React from 'react'
-import ProductCard from '../../Home/ProductCardsList/ProductCard'
+import React, { useContext } from 'react';
+import CartContext from '../../../context/cartContext';
 
-const CartItemCounter = ({navCartAddCount}) => {
+const CartItemCounter = () => {
+  const { navCartAddCount } = useContext(CartContext);
+
   return (
-    <>
-      <div className='cart-item-counter'>
-        {navCartAddCount}
-      </div>
-    </>
-  )
-}
+    <div className='cart-item-counter'>
+      {navCartAddCount}
+    </div>
+  );
+};
 
-export default CartItemCounter
+export default CartItemCounter;
