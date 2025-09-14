@@ -1,6 +1,5 @@
 import { useContext } from 'react'
-import CartContext from '../../../context/cartContext'
-
+import { CartProvider } from '../../../context/cartContext'
 // Import the following props from ProductCardList.jsx, the first component in which they are created (via the API call) :
 const ProductCard = ({
     category,

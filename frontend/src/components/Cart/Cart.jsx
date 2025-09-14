@@ -1,15 +1,11 @@
+import {useContext} from 'react'
+import CartContext from '../../context/cartContext';
 import CartItem from './CartItem'
 
 const Cart = ({
   // Used locally in Cart.jsx only:
-  setCartState,
-  // Used only in CartItem.jsx:
-  cartItems, // cartState
-  cartItemCounts, // counts
-  sumOfCartItems, // sum
-  handleAddToCart, // handleAddToCart()
-  handleRemoveFromCart, // handleRemoveFromCart()
-  numOfProductsInCart, // cartState.length
+  setCartState = useContext(CartContext),
+  numOfProductsInCart = useContext(CartContext), // cartState.length
 }) => {
 // console.log(sumOfCartItems)
   // getUniqueSortedCartProducts()'s purpose is to return a new array of objects from a newly created Map object, where each object in that array is unique and alphabetised by the value of its stringified product.name value. 

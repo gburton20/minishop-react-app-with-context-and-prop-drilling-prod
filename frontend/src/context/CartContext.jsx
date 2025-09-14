@@ -1,4 +1,4 @@
-  import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 // Create the context
 const CartContext = createContext();
@@ -45,6 +45,8 @@ export const CartProvider = ({ children }) => {
 
   const sumOfCartItems = cartState.reduce((acc, product) => acc + Number(product.price), 0);
 
+  const numOfProductsInCart = cartState.length;
+
   useEffect(() => {
     // console.log('Current value of the cartState variable in App.jsx:', cartState)
   }, [cartState]);
@@ -59,7 +61,8 @@ export const CartProvider = ({ children }) => {
         handleAddToCart,
         handleRemoveFromCart,
         counts,
-        sumOfCartItems
+        sumOfCartItems,
+        numOfProductsInCart
       }}
     >
       {children}
