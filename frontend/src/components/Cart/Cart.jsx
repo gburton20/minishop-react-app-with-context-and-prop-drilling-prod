@@ -5,12 +5,13 @@ import CartItem from './CartItem'
 const Cart = ({
   // Used locally in Cart.jsx only:
   setCartState = useContext(CartContext),
-  numOfProductsInCart = useContext(CartContext), // cartState.length
+  numOfProductsInCart = useContext(CartContext),
+  cartState = useContext(CartContext)
 }) => {
 // console.log(sumOfCartItems)
   // getUniqueSortedCartProducts()'s purpose is to return a new array of objects from a newly created Map object, where each object in that array is unique and alphabetised by the value of its stringified product.name value. 
   // The Map object's keys are each a unique product name, and their value pair is the product object associated with that unique product name. 
-  function getUniqueSortedCartProducts(cartItems) {
+  function getUniqueSortedCartProducts(cartState) {
     // 'Array.from()' is a JS method which creates a new shallow-copy array from an array-like object. In this context, the array-like object from which the shallow-copy array is derived is the Map object.
     // In this context, 'Array.from()' converts the iterator returned by .values() into an array
     return Array.from(
@@ -21,7 +22,7 @@ const Cart = ({
       // This Map object's keys are the product.names, and their values are the corresponding products
       // cartItems.map() creates [product.name, product] key-value pairs for the Map object. 
       // product.name is the key, and product is the value.
-      new Map(cartItems.map(product => [product.name, product]))
+      new Map(cartState.map(product => [product.name, product]))
       // A .values() method is called on the returned Map object (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/values). 
       // Because .values() is called on a Map object, its behaviour is different to if it was called on a regular object (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/values)
       // The .values() method returns an iterator of product objects from the preceding Map object, which now only contains one product object value per unique product.name key
@@ -35,7 +36,7 @@ const Cart = ({
   }
   // uniqueSortedCartProducts is assigned to the returned value of getUniqueSortedCartProducts being called with the paremeter of cartItems, itself a local variable of the global cartState array of objects variable defined in App.jsx:
   // In this context, an array of singular, unique, product objects is returned.
-  const uniqueSortedCartProducts = getUniqueSortedCartProducts(cartItems);
+  const uniqueSortedCartProducts = getUniqueSortedCartProducts(cartState);
   // console.log('uniqueSortedCartProducts', uniqueSortedCartProducts)
 
   const safeNumOfProductsInCart = Number(numOfProductsInCart) || 0;

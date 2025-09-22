@@ -12,7 +12,7 @@ import Home from './components/Home/Home'
 import Cart from './components/Cart/Cart'
 import Profile from './components/Profile'
 import Navbar from './components/Navbar/Navbar'
-import CartContext from './context/cartContext'
+import { CartProvider } from './context/cartContext'
 // import AuthModal from './components/AuthModal'
 
 // Re Auth0 API work:
@@ -63,7 +63,7 @@ function App() {
       <div>
         {/* This line passes user metadata as context throughout this app */}
         <UserMetadataContext.Provider value={metadata}>
-          <CartContext>
+          <CartProvider>
           {/* The AuthModal component should sit at a high level in the component tree, so that it isn't unmounted when navigating between routes */}
             {/* {isAuthModalOpen &&
               <AuthModal
@@ -86,15 +86,6 @@ function App() {
             <Route 
               path="/cart" 
               element={<Cart
-                // The setCartState array of objects variable:
-                setCartState={setCartState}
-                // Pass the cartState (a copy of each product's object data each time the user executes handleAddToCart() in ProductCard.jsx) to the Cart.jsx component so that each object is accessible within Cart.jsx for rendering.
-                cartItems={cartState}
-                cartItemCounts={counts}
-                sumOfCartItems={sumOfCartItems}
-                handleAddToCart={handleAddToCart}
-                handleRemoveFromCart={handleRemoveFromCart}
-                numOfProductsInCart={cartState.length}
               />}>
             </Route> {/* End of the second <Route/> */}
             {/* Start of the third route - for the Profile.jsx component */}
@@ -103,7 +94,7 @@ function App() {
               element={<Profile/>}
             />
           </Routes> {/* End of the <Routes/> component */}
-        </CartContext>
+        </CartProvider>
       </UserMetadataContext.Provider>
       </div>
     </>

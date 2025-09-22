@@ -1,14 +1,10 @@
 import { useContext } from 'react'
-import { CartProvider } from '../../../context/cartContext'
-// Import the following props from ProductCardList.jsx, the first component in which they are created (via the API call) :
+import CartContext from '../../../context/cartContext'// Import the following props from ProductCardList.jsx, the first component in which they are created (via the API call) :
 const ProductCard = ({
     category,
     image, 
     name, 
     price,
-    // handleAddToCart is a function defined in App.jsx and passed down as a prop through Home.jsx and ProductCardsList.jsx to ProductCard.jsx.
-    // By invoking this function from ProductCard.jsx (e.g., in a <button> onClick handler), we trigger state updates in App.jsx (such as cartState, navCartAddCount, and itemInCartCount).
-    // This pattern is called "lifting state up" and allows child components to communicate changes to their parent.
     handleAddToCart = useContext(CartContext)
 }) => {
     return (

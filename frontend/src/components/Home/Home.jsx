@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import ProductFilter from './ProductFilter'
 import SellProductForm from './SellProductForm'
 import BannerAdContainer from './BannerAdContainer'
@@ -6,11 +6,11 @@ import ProductCardsList from './ProductCardsList/ProductCardsList'
 import { useUserMetadata } from '../../App'
 import SellProductButton from './SellProductButton'
 import { useAuth0 } from "@auth0/auth0-react";
+import CartContext from '../../context/cartContext'
 
 
 const Home = ({
-  handleAddToCart, 
-}) => {
+  handleAddToCart = useContext(CartContext)}) => {
 
   // STATE SECTION:
 
