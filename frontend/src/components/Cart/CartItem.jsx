@@ -1,5 +1,5 @@
 import {useContext} from 'react'
-import CartContext from '../../context/cartContext';
+import CartContext from '../../context/CartContext';
 
 const CartItem = ({ 
   // CartItem receives two props; i) cartItems (an array of product objects passed down from App.jsx) and ii) cartItemCounts (a type number tracking the quantities of individual items added to the cart.)

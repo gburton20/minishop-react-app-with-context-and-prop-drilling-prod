@@ -1,12 +1,15 @@
 import { useContext } from 'react'
-import CartContext from '../../../context/cartContext'// Import the following props from ProductCardList.jsx, the first component in which they are created (via the API call) :
+import CartContext from '../../../context/CartContext'
+
+// Import the following props from ProductCardList.jsx, the first component in which they are created (via the API call) :
 const ProductCard = ({
     category,
     image, 
     name, 
-    price,
-    handleAddToCart = useContext(CartContext)
+    price
 }) => {
+    // Use context inside the component body
+    const { handleAddToCart } = useContext(CartContext);
     return (
         // React fragments act as the root level element in this return statement, allowing multiple child elements to be returned within their boundaries
         <>

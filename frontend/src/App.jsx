@@ -12,7 +12,7 @@ import Home from './components/Home/Home'
 import Cart from './components/Cart/Cart'
 import Profile from './components/Profile'
 import Navbar from './components/Navbar/Navbar'
-import { CartProvider } from './context/cartContext'
+import { CartProvider } from './context/CartContext'
 // import AuthModal from './components/AuthModal'
 
 // Re Auth0 API work:

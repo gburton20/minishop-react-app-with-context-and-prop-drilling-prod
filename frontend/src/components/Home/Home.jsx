@@ -6,7 +6,7 @@ import ProductCardsList from './ProductCardsList/ProductCardsList'
 import { useUserMetadata } from '../../App'
 import SellProductButton from './SellProductButton'
 import { useAuth0 } from "@auth0/auth0-react";
-import CartContext from '../../context/cartContext'
+import CartContext from '../../context/CartContext'
 
 
 const Home = ({
