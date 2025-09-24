@@ -75,7 +75,7 @@ const SellProductForm = ({
       formData.append('image', imageFile);
     }      
     setCustomProducts(prev => [...prev, formData]);
-    console.log('Form submitted! Here is the new formData for this UGC-product:', formData);
+    // console.log('Form submitted! Here is the new formData for this UGC-product:', formData);
     // If the user is authenticated, logged in, 
     if (isAuthenticated) {
       // Try to create an access token relevant to the auth0 URL for this user

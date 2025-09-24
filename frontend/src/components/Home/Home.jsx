@@ -19,8 +19,6 @@ const Home = ({
 
   // Add state for the selected category filter, which is of data type string. This state enables the functionality in ProductFilter.jsx. Set the default value to a string, 'all':
   const [selectedCategory, setSelectedCategory] = useState('All')
-  // Debug log for selectedCategory
-  console.log('Selected category:', selectedCategory);
 
   // State for the open and closing of the selling product modal form:
   const [isFormOpen, setIsFormOpen] = useState(false);
@@ -113,9 +111,7 @@ const Home = ({
       name: product.name,
       price: product.price
     }))
-  ];
-  console.log('Combined allProducts:', allProducts);
-  
+  ];  
   // END OF LOGIC SECTION FOR THE COMBINATION OF 3RD-PARTY AND USER-GENERATED PRODUCTS
   
   // START OF LOGIC SECTION FOR PRODUCTFILTER.JSX

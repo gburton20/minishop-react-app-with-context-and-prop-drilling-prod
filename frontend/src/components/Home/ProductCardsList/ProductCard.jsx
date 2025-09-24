@@ -34,7 +34,7 @@ const ProductCard = ({
                             price
                         }
                         // For development, log the value of the freshly created productDataPerClick object each time the button is clicked:
-                        console.log('The value of productDataPerClick in ProductCard.jsx each time handleAddToCart is called:', productDataPerClick);
+                        // console.log('The value of productDataPerClick in ProductCard.jsx each time handleAddToCart is called:', productDataPerClick);
                         // Pass the productDataPerClick object as an argument to handleAddToCart(), which is defined in App.jsx. Each time the button is clicked, handleAddToCart is called with productDataPerClick as an argument.
                         // handleAddToCart updates global states (cartState, navCartAddCount, itemInCartCount) in App.jsx. These updated states are then passed as props to relevant child components throughout the React app, including this component, ProductCard.jsx.
                         handleAddToCart(productDataPerClick);
