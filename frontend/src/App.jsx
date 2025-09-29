@@ -1,4 +1,5 @@
 // Import the useEffect and useState hooks from the React library
+// Context was needed here for the Auth0 AP work:
 import { useEffect, useState, createContext, useContext } from 'react'
 // Re Auth0 API work:
 import { useAuth0 } from '@auth0/auth0-react'
