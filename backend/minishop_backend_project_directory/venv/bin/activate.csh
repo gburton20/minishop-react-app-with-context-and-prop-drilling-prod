@@ -9,7 +9,7 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
-setenv VIRTUAL_ENV "/Users/georgeburton/Documents/Noble Desktop/Retakes/Retake-React-Bootcamp/Unit-3/3lab-minishop-react-app-with-context/backend/minishop_backend_project_directory/venv"
+setenv VIRTUAL_ENV "/Users/georgeburton/Documents/Software engineering job hunting/Local GitHub repos/dev-minishop-react-app-with-context-and-prop-drilling/backend/minishop_backend_project_directory/venv"
 
 set _OLD_VIRTUAL_PATH="$PATH"
 setenv PATH "$VIRTUAL_ENV/bin:$PATH"
