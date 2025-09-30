@@ -3,7 +3,6 @@ import AuthButton from './Auth/AuthButton'
 import CartNavIcon from './CartNavIcon/CartNavIcon'
 import { Link } from 'react-router-dom'
 
-// Import the navCartAddCount state (int) from App.jsx
 const Navbar = ({navCartAddCount}) => {
 
   return (

@@ -1,5 +1,3 @@
-import React from 'react'
-import ProductCard from './ProductCardsList/ProductCard'
 
 const BannerAdContainer = () => {
 return (

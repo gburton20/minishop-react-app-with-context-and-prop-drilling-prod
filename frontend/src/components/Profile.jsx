@@ -16,7 +16,6 @@ const Profile = () => {
         });
         console.log("Auth0 access token:", accessToken);
 
-        // Send JWT to Django backend
         const response = await fetch("http://localhost:8000/api/profile/", {
           method: "GET",
           headers: {

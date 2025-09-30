@@ -1,9 +1,7 @@
 import { createContext, useEffect, useState } from "react";
 
-// Create the context:
 const CartContext = createContext();
 
-// Provider component:
 export const CartProvider = ({ children }) => {
   const [navCartAddCount, setNavCartAddCount] = useState(0);
 
