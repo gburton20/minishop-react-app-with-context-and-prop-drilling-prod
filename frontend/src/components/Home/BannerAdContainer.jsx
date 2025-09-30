@@ -8,7 +8,7 @@ return (
             className='banner-ad-div' 
             style={{ position: 'relative' }}>
             <h1 className='banner-h1'>
-                Minishop's deal of the day!
+                Minishop's deals of the day!
             </h1>
         </div>
     </>
