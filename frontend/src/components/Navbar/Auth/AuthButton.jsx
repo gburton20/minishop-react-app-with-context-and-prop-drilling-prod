@@ -4,7 +4,6 @@ import LogoutButton from "./Log in and log out buttons/LogoutButton";
 
 const AuthButton = () => {
   const { isAuthenticated, user } = useAuth0();
-  // console.log("AuthButton user:", user, "isAuthenticated:", isAuthenticated);
   
   return (
     <>

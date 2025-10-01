@@ -1,4 +1,4 @@
-// import { StrictMode } from 'react'
+import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import './index.css'
@@ -8,7 +8,7 @@ import { Auth0Provider } from '@auth0/auth0-react'
 
 
 createRoot(document.getElementById('root')).render(
-  // <StrictMode>
+  <StrictMode>
     <Auth0Provider
       domain='dev-ngpva7twomewnfum.us.auth0.com'
       clientId='5sMCpbS0qTIJNtAXbxZUqOnGJScezSZR'
@@ -21,5 +21,5 @@ createRoot(document.getElementById('root')).render(
         <App />
       </BrowserRouter>
     </Auth0Provider>
-  // </StrictMode>
+  </StrictMode>
 )

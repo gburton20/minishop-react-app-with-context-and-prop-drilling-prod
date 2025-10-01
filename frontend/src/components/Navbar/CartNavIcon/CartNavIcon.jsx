@@ -1,7 +1,5 @@
-import React from 'react'
 import CartItemCounter from './CartItemCounter'
 
-// Import the navCartAddCount state (int) from Navbar.jsx
 const CartNavIcon = ({navCartAddCount}) => {
   return (
     <>

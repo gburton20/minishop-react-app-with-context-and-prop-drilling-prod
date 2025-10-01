@@ -1,14 +1,9 @@
-import { useEffect, useState } from 'react'
 import ProductCard from './ProductCard';
-
-// "https://api.escuelajs.co/api/v1/products"
 
 const ProductCardsList = ({
   products,
   handleAddToCart,
 }) => {
-
-  // Product fetching logic moved to Home.jsx
 
   return (
     <div className="product-cards-list">
