@@ -26,5 +26,10 @@ node_modules
 .DS_Store
 App.css
 
-#Django:
+# Django:
 venv/
+
+# Python:
+*.pyc
+__pycache__/
+db.sqlite3
