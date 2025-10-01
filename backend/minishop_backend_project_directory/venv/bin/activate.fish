@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/georgeburton/Documents/Noble Desktop/Retakes/Retake-React-Bootcamp/Unit-3/3lab-minishop-react-app-with-context/backend/minishop_backend_project_directory/venv"
+set -gx VIRTUAL_ENV "/Users/georgeburton/Documents/Software engineering job hunting/Local GitHub repos/dev-minishop-react-app-with-context-and-prop-drilling/backend/minishop_backend_project_directory/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

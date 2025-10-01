@@ -39,10 +39,10 @@ deactivate nondestructive
 if [ "${OSTYPE:-}" = "cygwin" ] || [ "${OSTYPE:-}" = "msys" ] ; then
     # transform D:\path\to\venv to /d/path/to/venv on MSYS
     # and to /cygdrive/d/path/to/venv on Cygwin
-    export VIRTUAL_ENV=$(cygpath "/Users/georgeburton/Documents/Noble Desktop/Retakes/Retake-React-Bootcamp/Unit-3/3lab-minishop-react-app-with-context/backend/minishop_backend_project_directory/venv")
+    export VIRTUAL_ENV=$(cygpath "/Users/georgeburton/Documents/Software engineering job hunting/Local GitHub repos/dev-minishop-react-app-with-context-and-prop-drilling/backend/minishop_backend_project_directory/venv")
 else
     # use the path as-is
-    export VIRTUAL_ENV="/Users/georgeburton/Documents/Noble Desktop/Retakes/Retake-React-Bootcamp/Unit-3/3lab-minishop-react-app-with-context/backend/minishop_backend_project_directory/venv"
+    export VIRTUAL_ENV="/Users/georgeburton/Documents/Software engineering job hunting/Local GitHub repos/dev-minishop-react-app-with-context-and-prop-drilling/backend/minishop_backend_project_directory/venv"
 fi
 
 _OLD_VIRTUAL_PATH="$PATH"
